@@ -4,11 +4,11 @@ todo = []
 done = []
 
 while True: 
-	task = input("what do you want to do:",)
-	tasksimple = task.str.to_lowercase().str.replace_all(' ','',literal=True)
+	task = input("what do you want to do:",).strip()
+	tasksimple = task.lower().replace(' ','')
 	if tasksimple == "exit":
-		break
-	elif task in todo:
+	 	break
+	if task in todo:
 		todo.remove(task)
 		done.append(task)
 	elif task in done:
